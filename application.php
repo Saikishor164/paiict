@@ -44,8 +44,6 @@ require 'config.php';
   <!-- <br><br> -->
   <p class="text-center font-italic fw-black fs-5 text-white"><u>Application form for Civil Services (Main Cum Personlity test) Coaching Programme_2023</u></p>
 
-
-
   <div class="container">
     <div class="row jumbotron">
       <div class="col-sm-12 form-group">
