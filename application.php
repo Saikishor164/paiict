@@ -36,7 +36,6 @@ require 'config.php';
   </style>
 
 </head>
-
 <body>
   <br>
   <h1 class="text-center text-white">Application form for IAS Coaching</h1>
