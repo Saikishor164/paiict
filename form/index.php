@@ -1,14 +1,13 @@
 <?php
-     include_once('easebuzz-lib/easebuzz_payment_gateway.php');
+     include_once('easebuzz-lib\easebuzz_payment_gateway.php');
      if(isset($_POST['submit'])){
       $name = $_POST['name'];
       $email = $_POST['email'];
       $phone = $_POST['phone'];
       $amount = $_POST['amount'];
 
-
-      $MERCHANT_KEY = "10PBP71ABZ2";
-      $SALT = "ABC55E8IBW";         
+      $MERCHANT_KEY = "2PBP7IABZ2";  // S59212I6RX
+      $SALT = "DAH88E3UWQ";
       $ENV = "test";   // set enviroment name
 
       // when successfully register done then get Merchant_key and SALT through email
@@ -22,13 +21,20 @@
         "firstname" => $name, 
         "email" => $email, 
         "phone" => $phone, 
-        "productinfo" => "Test", 
+        "productinfo" => " For Test", 
         "surl" => "http://localhost:8080/paiict/form/success.php", 
-        "furl" => "http://localhost:8080/paiict/form/failed.php", 
+        "furl" => "http://localhost:8080/paiict/form/failed.php",
+        "hash" => '46ed260db5a4cb33871f0b308aae3e899602cd7f20c6841677e4079d8b9e5ec3',
+        "udf1" => '',
+        "udf2" => '',
+        "udf3" => '',
+        "udf4" => '',
+        "udf5" => '',
+        "address" => '' 
     );
 
-    $data = $easebuzzObj->initiatePaymentAPI($postData);
-    print_r($data);    
+      $data = $easebuzzObj->initiatePaymentAPI($postData);
+      print_r($data);    
      }
 
 
@@ -63,6 +69,7 @@
     <input type="number" name="amount" id="amount">
     <br>
     <input type="submit" value="submit" name="submit">
+    <input type="reset" value="reset" name="reset">
     </form>
 
 
