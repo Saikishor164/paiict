@@ -50,27 +50,25 @@ require 'config.php';
         <form action="application.php" method="post">
           <p class="text-danger">*All the fields are Required*</p>
 
-          <label for="name">Name <span>*</span></label>
-          <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>" onkeypress="textonly(event)" required><br>
+          <label for="name">Name of the Institute<span>*</span></label>
+          <input class="form-control" type="text" placeholder="Name of the Institute" name="nameinst" id="nameinst" required><br>
 
-          <label for="dob" class="label">Date of Birth:  <span>*</span></label>
-          <input class="form-control" type="date" placeholder="Date of Birth:" name="dob" id="dob" required><br>
+          <label for="instadd" class="label">Institute Address <span>*</span></label>
+          <input class="form-control" type="text" placeholder="Institute Address" name="instadd" id="instadd" required><br>
 
-          <label for="father">Father's/Husband's Name:  <span>*</span></label>
-          <input class="form-control" type="text" onkeypress="textonly(event)" placeholder="Father's/Husband's Name" name="father" id="father" required><br>
+          <label for="instemail">Institute Email <span>*</span></label>
+          <input class="form-control" type="email" placeholder="Institute Email" name="instemail" id="instemail" required><br>
 
-          <label for="locala">Local Address: <span>*</span></label>
-          <textarea class="form-control" rows="1" cols="50" placeholder="Enter your address here..." id="locala" name="locala" required></textarea><br>
+          <label for="principal">Principal Name<span>*</span></label>
+          <input class="form-control" tyepe="text" placeholder="Principal Name" id="principal" name="principal" required></input><br>
 
-          <label for="pin1">Pincode <span>*</span></label>
-          <input type="tel" class="form-control" name="pin" id="pin1" placeholder="Pincode" onkeypress="numpin(event)" required><br>
+          <label for="principalno">Principal Contact Number <span>*</span></label>
+          <input type="tel" class="form-control" name="principalno" id="principalno" placeholder="Principal Contact Number" required><br>
 
-          <label for="Phone No:">Phone No: <span>*</span></label>
-          <input type="number" class="form-control" onkeypress="numonly(event)" placeholder="Phone No: " name="phoneno"  required><br>
+          <label for="teamname">Team Name <span>*</span></label>
+          <input type="text" class="form-control" onkeypress="numonly(event)" placeholder="Phone No: " name="teamname" id="teamname" required><br>
 
-
-          
-          <label for="email">Email Id: <span>*</span></label>
+          <label for="ment">Mentor Name<span>*</span></label>
           <input type="email" class="form-control" placeholder="enter your email" name="email" id="email" required><br>
 
           <label for="mobile">Mobile no: <span>*</span></label>
