@@ -6,9 +6,9 @@
       $phone = $_POST['principalno'];
       $amount = $_POST['amount'];
 
-      $MERCHANT_KEY = "59212I6";  //   2PBP7IABZ2
+      $MERCHANT_KEY = "2PBP7IABZ2";  //   2PBP7IABZ2
       $SALT = "DAH88E3UWQ";
-      $ENV = "59212I6";   // set enviroment name
+      $ENV = "test";   // set enviroment name
 
       // when successfully register done then get Merchant_key and SALT through email
 
@@ -198,7 +198,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           <label for="stddivfirst"> Student Class Division</label>
           <input type="text" class="input" placeholder="Student Class Division" name="stddivfirst" id="stddivfirst" required > <br> <br>
-
 
           <label for="stdsecna">2) <br> Name of the Student  </label>
           <input type="text" class="input" placeholder="Name of first Student" name="stdfirstdsecnastna" id="stdsecna" required > <br> <br>
