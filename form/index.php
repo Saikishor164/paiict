@@ -168,6 +168,8 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
+    
+
     $sql = "INSERT INTO `registration`(`id`, `nameinst`, `instadd`, `instemail`, `principal`, `principalno`, `teamname`, `mentorname`, `mentorno`, `mentorquali`, `mentoradhar`, `stdfirstna`, `stdfirstph`, `stdagefirst`, `stddivfirst`, `stdsecna`, `stdsecph`, `stdagesec`, `stddivsec`, `stdthridna`, `stdthridph`, `stdagethrid`, `stddivthrid`, `stdfourtna`, `stdfourtph`, `stdagefourt`, `stddivfourt`, `stdfifthna`, `stdfifthph`, `stdagefifth`, `stddivfifth`, `amount`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
