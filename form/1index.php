@@ -29,182 +29,24 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+
 <?php include 'header.php'; ?>
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Generate a unique user ID
-        $user_id = uniqid();
-
-        // Initialize variables to store form data
-        $nameinst = $instadd = $instemail = $principal = $principalno = $teamname = $mentorname = $mentorno = $mentorquali = $stdfirstna = $stdagefirst = $stddivfirst = $stdsecna = $stdagesec = $stddivsec = $stdthridna = $stdagethrid = $stddivthrid = $stdfourtna = $stdagefourt = $stddivfourt = $stdfifthna = $stdagefifth = $stddivfifth = $amount = "";
-
-        // Check if the keys exist before accessing them
-        if (isset($_POST["nameinst"])) {
-            $nameinst = $_POST["nameinst"];
-        }
-        if (isset($_POST["instadd"])) {
-            $instadd = $_POST["instadd"];
-        }
-        if (isset($_POST["instemail"])) {
-            $instemail = $_POST["instemail"];
-        }
-        if (isset($_POST["principal"])) {
-            $principal = $_POST["principal"];
-        }
-        if (isset($_POST["principalno"])) {
-            $principalno = $_POST["principalno"];
-        }
-        if (isset($_POST["teamname"])) {
-            $teamname = $_POST["teamname"];
-        }
-        if (isset($_POST["mentorname"])) {
-            $mentorname = $_POST["mentorname"];
-        }
-        if (isset($_POST["mentorno"])) {
-            $mentorno = $_POST["mentorno"];
-        }
-        if (isset($_POST["mentorquali"])) {
-            $mentorquali = $_POST["mentorquali"];
-        }
-        if (isset($_POST["stdfirstna"])) {
-            $stdfirstna = $_POST["stdfirstna"];
-        }
-        if (isset($_POST["stdagefirst"])) {
-            $stdagefirst = $_POST["stdagefirst"];
-        }
-        if (isset($_POST["stddivfirst"])) {
-            $stddivfirst = $_POST["stddivfirst"];
-        }
-        if (isset($_POST["stdsecna"])) {
-            $stdsecna = $_POST["stdsecna"];
-        }
-        if (isset($_POST["stdagesec"])) {
-            $stdagesec = $_POST["stdagesec"];
-        }
-        if (isset($_POST["stddivsec"])) {
-            $stddivsec = $_POST["stddivsec"];
-        }
-        if (isset($_POST["stdthridna"])) {
-            $stdthridna = $_POST["stdthridna"];
-        }
-        if (isset($_POST["stdagethrid"])) {
-            $stdagethrid = $_POST["stdagethrid"];
-        }
-        if (isset($_POST["stddivthrid"])) {
-            $stddivthrid = $_POST["stddivthrid"];
-        }
-        if (isset($_POST["stdfourtna"])) {
-            $stdfourtna = $_POST["stdfourtna"];
-        }
-        if (isset($_POST["stdagefourt"])) {
-            $stdagefourt = $_POST["stdagefourt"];
-        }
-        if (isset($_POST["stddivfourt"])) {
-            $stddivfourt = $_POST["stddivfourt"];
-        }
-        if (isset($_POST["stdfifthna"])) {
-            $stdfifthna = $_POST["stdfifthna"];
-        }
-        if (isset($_POST["stdagefifth"])) {
-            $stdagefifth = $_POST["stdagefifth"];
-        }
-        if (isset($_POST["stddivfifth"])) {
-            $stddivfifth = $_POST["stddivfifth"];
-        }
-        if (isset($_POST["amount"])) {
-            $amount = $_POST["amount"];
-        }
-
-        // Handle file uploads here
-        $institution_folder = "uploads/" . $nameinst;
-        if (!file_exists($institution_folder)) {
-            mkdir($institution_folder, 0777, true);
-        }
-
-        // File uploads code starts here
-    $mentoradhar_file = $institution_folder . "/" . $_FILES["mentoradhar"]["name"];
-    move_uploaded_file($_FILES["mentoradhar"]["tmp_name"], $mentoradhar_file);
-
-    $stdfirstph_file = $institution_folder . "/" . $_FILES["stdfirstph"]["name"];
-    move_uploaded_file($_FILES["stdfirstph"]["tmp_name"], $stdfirstph_file);
-
-    $stdsecph_file = $institution_folder . "/" . $_FILES["stdsecph"]["name"];
-    move_uploaded_file($_FILES["stdsecph"]["tmp_name"], $stdsecph_file);
-
-    $stdfourtph_file = $institution_folder . "/" . $_FILES["stdfourtph"]["name"];
-    move_uploaded_file($_FILES["stdfourtph"]["tmp_name"], $stdfourtph_file);
-
-    $stdfifthph_file = $institution_folder . "/" . $_FILES["stdfifthph"]["name"];
-    move_uploaded_file($_FILES["stdfifthph"]["tmp_name"], $stdfifthph_file);
-
-    // File uploads code ends here
-
-    // $mentoradhar = $upload_dir . $_FILES["mentoradhar"]["name"];
-    // move_uploaded_file($_FILES["mentoradhar"]["tmp_name"], $mentoradhar);
-
-    // $stdfirstph = $upload_dir . $_FILES["stdfirstph"]["name"];
-    // move_uploaded_file($_FILES["stdfirstph"]["tmp_name"], $stdfirstph);
-
-    // $stdsecph = $upload_dir . $_FILES["stdsecph"]["name"];
-    // move_uploaded_file($_FILES["stdsecph"]["tmp_name"], $stdsecph);
-
-    // $stdfourtph= $upload_dir . $_FILES["stdfourtph"]["name"];
-    // move_uploaded_file($_FILES["stdfourtph"]["tmp_name"], $stdfourtph);
-
-    // $stdfifthph = $upload_dir . $_FILES["stdfifthph"]["name"];
-    // move_uploaded_file($_FILES["stdfifthph"]["tmp_name"], $stdfifthph);
-
-
-        // Database insertion code
-        // Database insertion code
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "paiict";
-
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    
-
-    $sql = "INSERT INTO `registration`(`id`, `nameinst`, `instadd`, `instemail`, `principal`, `principalno`, `teamname`, `mentorname`, `mentorno`, `mentorquali`, `mentoradhar`, `stdfirstna`, `stdfirstph`, `stdagefirst`, `stddivfirst`, `stdsecna`, `stdsecph`, `stdagesec`, `stddivsec`, `stdthridna`, `stdthridph`, `stdagethrid`, `stddivthrid`, `stdfourtna`, `stdfourtph`, `stdagefourt`, `stddivfourt`, `stdfifthna`, `stdfifthph`, `stdagefifth`, `stddivfifth`, `amount`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-    $stmt = $conn->prepare($sql);
-
-    if ($stmt) {
-        $stmt->bind_param("ssssssssssssssssssssssssssssssss", $id, $nameinst, $instadd, $instemail, $principal, $principalno, $teamname, $mentorname, $mentorno, $mentorquali, $mentoradhar, $stdfirstna, $stdfirstph, $stdagefirst, $stddivfirst, $stdsecna, $stdsecph, $stdagesec, $stddivsec, $stdthridna, $stdthridph, $stdagethrid, $stddivthrid, $stdfourtna, $stdfourtph, $stdagefourt, $stddivfourt, $stdfifthna, $stdfifthph, $stdagefifth, $stddivfifth, $amount);
-
-        // $stmt->bind_param("sssssssssssssssssssssssssssssss", $nameinst, $instadd, $instemail, $principal, $principalno, $teamname, $mentorname, $mentorno, $mentorquali, $mentoradhar_file, $stdfirstna, $stdfirstph_file, $stdagefirst, $stddivfirst, $stdsecna, $stdsecph_file, $stdagesec, $stddivsec, $stdthridna, $stdthridph_file, $stdagethrid, $stddivthrid, $stdfourtna, $stdfourtph_file, $stdagefourt, $stddivfourt, $stdfifthna, $stdfifthph_file, $stdagefifth, $stddivfifth, $amount);
-
-        // Display a success message or handle errors
-        // ...
-    
-
-        if ($stmt->execute()) {
-            echo "Data inserted successfully.";
-        } else {
-            echo "Error: " . $stmt->error;
-        }
-
-        $stmt->close();
-    } else {
-        echo "Error in preparing the statement: " . $conn->error;
-    }
-
-    $conn->close();
-}
-    ?>
- 
 <br><br><br>
+<!-- Page Content -->
+
+
+
+
+
+
+
   <div class="container">
     <div class="row jumbotron">
       <div class="col-sm-12 form-group">
     <form method="post" enctype="multipart/form-data">
         <!-- Your form fields here -->
-        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>"> <br><br>
+        <input id="apiname" type ="" value="https://pay.easebuzz.in/payment/initiateLink" hidden>
+        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
   <label for="name">Name of the Institute<span>*</span></label>
           <input class="input" type="text" placeholder="Name of the Institute" name="nameinst" id="nameinst" required ><br><br>
 
@@ -248,7 +90,7 @@
           <input type="text" class="input" placeholder="Student Class Division" name="stddivfirst" id="stddivfirst" required > <br> <br>
 
           <label for="stdsecna">2) <br> Name of the Student <span>*</span> </label>
-          <input type="text" class="input" placeholder="Name of first Student" name="stdfirstdsecnastna" id="stdsecna" required > <br> <br>
+          <input type="text" class="input" placeholder="Name of first Student" name="stdsecna" id="stdsecna" required > <br> <br>
 
           <label for="stdsecph"> Student Photo (200kb File) <span>*</span> </label>
           <input type="file" class="input" placeholder="student Photot" name="stdsecph" id="stdsecph" accept=".pdf" required > <br><br>
@@ -301,7 +143,7 @@
     <br><br><br>
 
     <!-- submit button -->
-    <button value="submit" name="submit" type="submit">Submit</button>
+    <button value="submit" name="submit" type="submit" id="submit">Submit</button>
     <button value="reset" name="reset" type="reset">Reset</button>
         
     </form>
@@ -315,5 +157,106 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        $("submit").click(function(event){
+          event.preventDefault()
+
+          var apiname = $('#apiname').val();
+          var nameinst = $('#nameinst').val();
+          var instadd = $('#instadd').val();
+          var instemail = $('#instemail').val();
+          var principal = $('#principal').val();
+          var principalno = $('#principalno').val();
+          var teamname = $('#teamname').val();
+          var mentorname = $('#mentorname').val();
+          var mentorno = $('#mentorno').val();
+          var mentorquali = $('#mentorquali').val();
+          var mentoradhar = $('#mentoradhar').val();
+          var stdfirstna = $('#stdfirstna').val();
+          var stdfirstph = $('#stdfirstph').val();
+          var stdagefirst = $('#stdagefirst').val();
+          var stddivfirst = $('#stddivfirst').val();
+          var stdsecna = $('#stdsecna').val();
+          var stdagesec = $('#stdagesec').val();
+          var stddivsec = $('#stddivsec').val();
+          var stdthridna = $('#stdthridna').val();
+          var stdthridph = $('#stdthridph').val();
+          var stdagethrid = $('#stdagethrid').val();
+          var stddivthrid = $('#stddivthrid').val();
+          var stdfourtna = $('#stdfourtna').val();
+          var stdfourtph = $('#stdfourtph').val();
+          var stdagefourt = $('#stdagefourt').val();
+          var stddivfourt = $('#stddivfourt').val();
+          var stdfifthna = $('#stdfifthna').val();
+          var stdfifthph = $('#stdfifthph').val();
+          var stdagefifth = $('#stdagefifth').val();
+          var stddivfifth = $('#stddivfifth').val();
+          var amount = $('#amount').val();
+
+
+          $.ajax({
+
+            type:"POST",
+            url:"easebuzz.php",
+            data:{
+              apiname:apiname,
+              nameinst:nameinst,
+              instadd:instadd,
+              instemail:instemail,
+              principal:principal,
+              principalno:principalno,
+              teamname:teamname,
+              mentorname:mentorname,
+              mentorno:mentorno,
+              mentorquali:mentorquali,
+              mentoradhar:mentoradhar,
+              stdfirstna:stdfirstna,
+              stdfirstph:stdfirstph,
+              stdagefirst:stdagefirst,
+              stddivfirst:stddivfirst,
+              stdsecna:stdsecna,
+              stdagesec:stdagesec,
+              stddivsec:stddivsec,
+              stdthridna:stdthridna,
+              stdthridph:stdthridph,
+              stdagethrid:stdagethrid,
+              stddivthrid:stddivthrid,
+              stdfourtna:stdfourtna,
+              stdfourtph:stdfourtph,
+              stdagefourt:stdagefourt,
+              stddivfourt:stddivfourt,
+              stdfifthna:stdfifthna,
+              stdfifthph:stdfifthph,
+              stdagefifth:stdagefifth,
+              stddivfifth:stddivfifth,
+              amount:amount,
+            },
+            success:function(data) {
+          console.log(data);
+          response = JSON.parse(data);
+          // alert(response);
+         if (response.status == '1') {
+                    window.location.href = response.data;//<- your url here
+                }
+         
+        },
+        error: function(data) {
+        alert('error; ' + eval(error));
+
+      }
+
+  })
+})
+})
+
+    </script>
+
+
+
   </body>
 </html>

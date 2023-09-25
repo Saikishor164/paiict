@@ -10,17 +10,6 @@
     </head>
 <body>
 
-<?php
-    // Database configuration  
-    require_once "config.php";
-
-    $txnsId = $_POST["txnid"];
-
-    /* update payment status by txnsId */
-    $query = "UPDATE payment_transaction SET status='success' WHERE txns_id = '$txnsId'";
-    if($con->query($query)){
-        echo "<h3 class='text-success'>Your Payment has been Successful</h3>";
-    }
-?>
+<h1>SuccessFully</h1>
 </body>
 </html>
