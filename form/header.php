@@ -2,8 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+  /* Nav Image  */
     img{
     max-width: 100%; /* Make the images responsive */
     height: auto; /* Maintain aspect ratio */
@@ -13,66 +16,107 @@
   text-align: center;
   background-color: black;
 }
+/* Nav Image End */
 
-ul {
+/* styles.css */
+.navbar {
+  background-color: black;
+  padding: 10px 0; /* Increase height for text and registration button */
+  text-align: center;
+  border-top: 2px solid white;
+  border-bottom: 5px solid white;
+}
+
+.nav-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: center;
+  align-items: center; /* Vertically center items */
+  width: 100%; /* Ensure the navbar spans the full width */
 }
 
-li {
-  margin: 0 20px;
+.nav-list li {
+  margin: 0 10px; /* Adjust horizontal spacing as needed */
   position: relative;
 }
 
-a {
+.nav-list a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  font-size: 18px; /* Increase text size for better spacing */
 }
 
-a.active {
+.nav-list a.active {
+  color: #045cb4;
+  text-decoration: none;
+}
+
+.nav-list a:hover {
   color: yellow;
+  opacity: 100%;
+  transition: color 0.8s ease-in-out;
+  text-decoration: none;
 }
 
-a:hover {
-  color: blue;
-}
 
 
 
-
-.hoverable:hover ul {
+/* Show submenu on hover */
+.nav-list .hoverable:hover ul {
   display: block;
 }
 
-ul ul {
+.nav-list ul {
   display: none;
   position: absolute;
   background-color: black;
   border-top: 2px solid yellow;
-  padding: 5px 0;
+  padding: 10px 0; /* Increase padding for better spacing */
 }
 
-ul ul li {
+.nav-list ul li {
   margin: 0;
 }
 
-ul ul a {
+.nav-list ul a {
   color: white;
 }
 
+/* Style the registration button */
 .registration-button a {
   background-color: red;
   border-radius: 5px;
   padding: 10px 20px;
   color: white;
   text-decoration: none;
+  font-size: 18px; /* Increase text size for better spacing */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-        /* Style the main menu container */
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .nav-list {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .nav-list li {
+    margin: 10px 0; /* Adjust vertical spacing for mobile */
+  }
+
+  .nav-list ul {
+    position: static; /* Reset submenu position */
+    display: none; /* Hide submenu by default for mobile */
+  }
+
+  .nav-list .hoverable:hover ul {
+    display: none; /* Hide submenu on mobile */
+  }
+  
+}
+
 
 </style>
     <!-- Include Bootstrap CSS -->
@@ -81,56 +125,56 @@ ul ul a {
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-
 <img src="header.png" alt="header_image">
-<header>
-    <!-- <ul>
-      <li>
-        <a class="active" href="https://www.ictacademypune.com/pairobochamps">Home</a></li>
-      </li>
-      <li>
-        <a href="https://www.ictacademypune.com/pairobochamps/our-patrons">Our Patrons</a>
-      </li>
-      <li>
-        <a href="https://www.ictacademypune.com/pairobochamps/competition-brief/"> Competition brief </a>
-      </li>
-      <li>
-        <a href="https://www.ictacademypune.com/pairobochamps/competition-rules/">Competition Rules</a>
-      </li>
-      <li>
-        <a href="https://www.ictacademypune.com/pairobochamps/rules-regulations/">Rules &amp; Regulations</a>
-      </li>
-      <li>
-        <a href="https://www.ictacademypune.com/pairobochamps/terms-and-conditions/">Terms and Conditions</a>
-      </li>
-      <li>
-        <a href="https://www.ictacademypune.com/pairobochamps/prizes/">Prizes</a>
-      </li>
-      <li>
-        <a href="https://www.ictacademypune.com/pairobochamps/gallery/">Gallery</a>
-      </li>
-      <li>
-        <a href="http://www.ictacademypune.com/pairobochamps/form/">Registration</a>
-      </li>
-    </ul> -->
 
-    <ul>
-      <li><a class="active" href="https://www.ictacademypune.com/pairobochamps">Home</a></li>
-      <li><a href="https://www.ictacademypune.com/pairobochamps/our-patrons">Our Patrons</a></li>
-      <li><a href="https://www.ictacademypune.com/pairobochamps/competition-brief/">Competition brief</a></li>
-      <li class="hoverable">
-        <a href="https://www.ictacademypune.com/pairobochamps/competition-rules/">Competition Rules</a>
-        <ul>
-          <li><a href="https://www.ictacademypune.com/pairobochamps/rules-regulations/">Rules & Regulations</a></li>
-          <li><a href="https://www.ictacademypune.com/pairobochamps/terms-and-conditions/">Terms and Conditions</a></li>
+
+
+<!-- new code for nav -->
+
+<div class="navbar">
+        <ul class="nav-list">
+            <li><a class="active" href="#">Form</a></li>
+            <li><a href="https://www.ictacademypune.com/pairobochamps">Home</a></li>
+            <li><a href="https://www.ictacademypune.com/pairobochamps/our-patrons">Our Patrons</a></li>
+            <li><a href="https://www.ictacademypune.com/pairobochamps/competition-brief/">Competition Brief</a></li>
+            <li class="hoverable">
+                <a href="https://www.ictacademypune.com/pairobochamps/competition-rules/">Competition Rules</a>
+                <ul>
+                    <li><a href="https://www.ictacademypune.com/pairobochamps/rules-regulations/">Rules & Regulations</a></li>
+                   <br>
+                    <li><a href="https://www.ictacademypune.com/pairobochamps/terms-and-conditions/">Terms and Conditions</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.ictacademypune.com/pairobochamps/prizes/">Prizes</a></li>
+            <li><a href="https://www.ictacademypune.com/pairobochamps/gallery/">Gallery</a></li>
+            <li class="registration-button"><a href="http://www.ictacademypune.com/pairobochamps/form/">Registration</a></li>
         </ul>
-      </li>
-      <li><a href="https://www.ictacademypune.com/pairobochamps/prizes/">Prizes</a></li>
-      <li><a href="https://www.ictacademypune.com/pairobochamps/gallery/">Gallery</a></li>
-      <li class="registration-button"><a href="http://www.ictacademypune.com/pairobochamps/form/">Registration</a></li>
-    </ul>
+    </div>
 
-  </header>
+
+
+<!-- Below is the old code  -->
+
+<!-- <header>   
+<div class="navbar">
+  <ul>
+  <li><a class ="active" href="#">Form</a></li>
+    <li><a href="https://www.ictacademypune.com/pairobochamps">Home</a></li>
+    <li><a href="https://www.ictacademypune.com/pairobochamps/our-patrons">Our Patrons</a></li>
+    <li><a href="https://www.ictacademypune.com/pairobochamps/competition-brief/">Competition Brief</a></li>
+    <li class="hoverable">
+      <a href="https://www.ictacademypune.com/pairobochamps/competition-rules/">Competition Rules</a>
+      <ul>
+        <li><a href="https://www.ictacademypune.com/pairobochamps/rules-regulations/">Rules & Regulations</a></li>
+        <li><a href="https://www.ictacademypune.com/pairobochamps/terms-and-conditions/">Terms and Conditions</a></li>
+      </ul>
+    </li>
+    <li><a href="https://www.ictacademypune.com/pairobochamps/prizes/">Prizes</a></li>
+    <li><a href="https://www.ictacademypune.com/pairobochamps/gallery/">Gallery</a></li>
+    <li class="registration-button"><a href="http://www.ictacademypune.com/pairobochamps/form/">Registration</a></li>
+  </ul>
+</div>
+  </header> -->
    <!-- Include Bootstrap JS and jQuery if needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
