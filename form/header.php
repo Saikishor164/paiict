@@ -125,7 +125,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-<img src="header.png" alt="header_image">
+<img src="assets/header.png" alt="header_image">
 
 
 

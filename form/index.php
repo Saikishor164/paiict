@@ -34,12 +34,6 @@
 <br><br><br>
 <!-- Page Content -->
 
-
-
-
-
-
-
   <div class="container">
     <div class="row jumbotron">
       <div class="col-sm-12 form-group">
