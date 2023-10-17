@@ -32,3 +32,42 @@ CREATE TABLE registration (
     stddivfifth VARCHAR(255),
     amount INT
 );
+
+
+CREATE TABLE `maindata` (
+  `id` int(11) NOT NULL,
+  `nameinst` varchar(255) NOT NULL,
+  `instadd` varchar(255) NOT NULL,
+  `instemail` varchar(255) NOT NULL,
+  `principal` varchar(255) NOT NULL,
+  `principalno` int(11) NOT NULL,
+  `teamname` varchar(255) NOT NULL,
+  `mentorname` varchar(255) NOT NULL,
+  `mentorno` int(11) NOT NULL,
+  `mentorquali` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+INSERT INTO `maindata` (`id`, `nameinst`, `instadd`, `instemail`, `principal`, `principalno`, `teamname`, `mentorname`, `mentorno`, `mentorquali`) VALUES
+(1, 'saikishor Rasala', 'Sr. No54, Om Society, BT Kawade Rd, Near Adarsh High School, Pune -36', 'df@gmail.com', 'hjevgf', 2147483647, 'DJBVFASJDFV', 'DVAVF@gmail.com', 2147483647, 'sjfsjdvg4`'),
+(2, 'saikishor Rasala', 'Sr. No54, Om Society, BT Kawade Rd, Near Adarsh High School, Pune -36', 'df@gmail.com', 'hjevgf', 2147483647, 'DJBVFASJDFV', 'DVAVF@gmail.com', 2147483647, 'sjfsjdvg4`'),
+(3, 'saikishor Rasala', 'Sr. No54, Om Society, BT Kawade Rd, Near Adarsh High School, Pune -36', 'df@gmail.com', 'hjevgf', 2147483647, 'DJBVFASJDFV', 'DVAVF@gmail.com', 2147483647, 'sjfsjdvg4`'),
+(4, 'saikishor Rasala', 'Sr. No54, Om Society, BT Kawade Rd, Near Adarsh High School, Pune -36', 'df@gmail.com', 'hjevgf', 2147483647, 'DJBVFASJDFV', 'DVAVF@gmail.com', 2147483647, 'sjfsjdvg4`'),
+(5, 'saikishor Rasala', 'Sr. No54, Om Society, BT Kawade Rd, Near Adarsh High School, Pune -36', 'df@gmail.com', 'hjevgf', 2147483647, 'DJBVFASJDFV', 'DVAVF@gmail.com', 2147483647, 'sjfsjdvg4`');
+
+
+CREATE TABLE `studenttable` (
+  `id` int(11) NOT NULL,
+  `main_id` int(11) DEFAULT NULL,
+  `stdname` varchar(255) NOT NULL,
+  `stdphoto` varchar(255) NOT NULL,
+  `stdage` int(11) NOT NULL,
+  `stddiv` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `studenttable` (`id`, `main_id`, `stdname`, `stdphoto`, `stdage`, `stddiv`) VALUES
+(1, 1, '', 'uploads', 0, ''),
+(2, 1, '', 'uploads', 0, ''),
+(3, 1, '', 'uploads', 0, ''),
+(4, 1, '', 'uploads', 0, ''),
+(5, 1, '', 'uploads', 0, '');

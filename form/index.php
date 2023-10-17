@@ -1,3 +1,11 @@
+<?php
+// Discuss Different branches of AI
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,10 +45,9 @@
   <div class="container">
     <div class="row jumbotron">
       <div class="col-sm-12 form-group">
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" action="database.php" enctype="multipart/form-data">
         <!-- Your form fields here -->
         <input id="apiname" type ="" value="https://pay.easebuzz.in/payment/initiateLink" hidden>
-        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
   <label for="name">Name of the Institute<span>*</span></label>
           <input class="input" type="text" placeholder="Name of the Institute" name="nameinst" id="nameinst" required ><br><br>
 
@@ -253,5 +260,16 @@
 
 
 
+
+
+
+
+
+
+
   </body>
 </html>
+
+
+
+
