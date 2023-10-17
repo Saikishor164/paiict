@@ -13,6 +13,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="http://localhost/paiict/wp-content/uploads/2023/08/pai-logo-circle-02.png">
+
 
     <!-- Custom CSS -->
     <style>
